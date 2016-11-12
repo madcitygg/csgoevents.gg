@@ -102,7 +102,7 @@ add_action( 'widgets_init', 'csgoeventsgg_widgets_init' );
  * Enqueue scripts and styles.
  */
 function csgoeventsgg_scripts() {
-	wp_enqueue_style( 'csgoeventsgg-style', get_stylesheet_uri() );
+	wp_enqueue_style('csgoeventsgg-style', get_template_directory_uri() . '/public/css/app.css', 'all');
 
 	wp_enqueue_script( 'csgoeventsgg-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

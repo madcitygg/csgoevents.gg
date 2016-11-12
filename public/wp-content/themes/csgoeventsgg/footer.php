@@ -10,6 +10,14 @@
  */
 
 ?>
+      </div>
+    </main><!-- /.content -->
+    <footer class="south">
+      <div class="boundary">
+        <p>Mad City, LLC. All rights reserved.</p>
+      </div>
+    </footer><!-- /.south -->
+    </div><!-- /.app -->
   <?php wp_footer(); ?>
 </body>
 </html>

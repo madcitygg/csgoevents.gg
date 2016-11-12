@@ -21,8 +21,18 @@
 
 <body <?php body_class(); ?>>
 <div class="app">
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-
-	<nav class="main-navigation" role="navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-	</nav>
+  <div class="PageAlert _twitch">
+    <div class="boundary">
+      <p>Mad City LAN 2 is LIVE! https://twitch.tv/madcitygg</p>
+    </div>
+  </div>
+  <header class="north">
+    <div class="boundary">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        <nav class="main-navigation" role="navigation">
+          <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+        </nav>
+    </div>
+  </header><!-- /.north -->
+  <main class="content" role="main">
+    <div class="boundary">
