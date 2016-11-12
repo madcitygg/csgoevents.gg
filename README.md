@@ -48,3 +48,6 @@ Try this (don't do the `vagrant login` as it describes):
 | User | madcitygg |
 | Password | QcKkM9HYMPDBP9 |
 ```
+
+### WP-Api
+[http://v2.wp-api.org/](http://v2.wp-api.org/)

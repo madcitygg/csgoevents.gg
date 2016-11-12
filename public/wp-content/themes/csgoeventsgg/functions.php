@@ -138,3 +138,13 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load csgoevents.gg specifics (post types, taxonomies, etc)
+ */
+require get_template_directory() . '/inc/csgoeventsgg.php';
+
+/**
+ * Remove admin bar, even when logged in
+ */
+add_filter('show_admin_bar', '__return_false');
