@@ -240,4 +240,41 @@ function sponsors_init()
     );
     register_post_type('sponsors',$sponsors_args);
 }
+add_action('init', 'alerts_init');
+function alerts_init()
+{
+    // Maps post type
+    $alerts_labels = array(
+        'name' => _x('Alerts', 'post type general name'),
+        'singular_name' => _x('Alert', 'post type singular name'),
+        'all_items' => __('All Alerts'),
+        'add_new' => _x('Add new Alert', 'Alert'),
+        'add_new_item' => __('Add new Alert'),
+        'edit_item' => __('Edit Alert'),
+        'new_item' => __('New Alert'),
+        'view_item' => __('View Alert'),
+        'search_items' => __('Search in Alerts'),
+        'not_found' =>  __('No Alerts found'),
+        'not_found_in_trash' => __('No Alerts found in trash'),
+        'parent_item_colon' => ''
+    );
+
+    $alerts_args = array(
+        'labels' => $alerts_labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'menu_position' => 5,
+        'supports' => array('title','custom-fields','thumbnail'),
+        'has_archive' => false,
+        'show_in_rest' => true,
+        'rest_base' => 'alerts-api',
+        'rest_controller_class' => 'WP_REST_Posts_Controller'
+    );
+    register_post_type('alerts',$alerts_args);
+}
 ?>
