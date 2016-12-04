@@ -2,6 +2,7 @@
 
 TODO:
 - Do something cleaner with the path to the theme directory 
+- Don't commit the 'public' assets directory
 
 */
 module.exports = function(grunt) {
