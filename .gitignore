@@ -3,4 +3,5 @@
 
 wp-config.php
 public/wp-content/uploads
-public/wp-content/themes/csgoeventsgg/node_modules
+
+node_modules

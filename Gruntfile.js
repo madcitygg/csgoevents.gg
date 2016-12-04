@@ -1,3 +1,9 @@
+/* 
+
+TODO:
+- Do something cleaner with the path to the theme directory 
+
+*/
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -6,8 +12,8 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['dev/js/vendor/isotope.pkgd.js', 'dev/js/app.js'],
-        dest: 'public/js/<%= pkg.name %>.js'
+        src: ['public/wp-content/themes/csgoeventsgg/dev/js/vendor/isotope.pkgd.js', 'public/wp-content/themes/csgoeventsgg/dev/js/app.js'],
+        dest: 'public/wp-content/themes/csgoeventsgg/public/js/<%= pkg.name %>.js'
       }
     },
     uglify: {
@@ -16,7 +22,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'public/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+          'public/wp-content/themes/csgoeventsgg/public/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
         }
       }
     },
@@ -38,7 +44,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'public/css/app.css':'dev/scss/app.scss'
+          'public/wp-content/themes/csgoeventsgg/public/css/app.css':'public/wp-content/themes/csgoeventsgg/dev/scss/app.scss'
         }
       }
     },
@@ -46,7 +52,7 @@ module.exports = function(grunt) {
       options: {
         map: {
             inline: false,
-            annotation: 'public/css/maps/'
+            annotation: 'public/wp-content/themes/csgoeventsgg/public/css/maps/'
         },
         processors: [
           require('pixrem')(), // add fallbacks for rem units
@@ -55,23 +61,23 @@ module.exports = function(grunt) {
         ]
       },
       dist: {
-        src: 'public/css/app.css'
+        src: 'public/wp-content/themes/csgoeventsgg/public/css/app.css'
       }
     },
     imagemin: {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'dev/images/',
+          cwd: 'public/wp-content/themes/csgoeventsgg/dev/images/',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'public/images/'
+          dest: 'public/wp-content/themes/csgoeventsgg/public/images/'
         }]
       }
     },
     copy: {
       main: {
         files: [
-          {expand: true, flatten: true, src: ['dev/fonts/**'], dest: 'public/fonts/'}
+          {expand: true, flatten: true, src: ['public/wp-content/themes/csgoeventsgg/dev/fonts/**'], dest: 'public/wp-content/themes/csgoeventsgg/public/fonts/'}
         ]
       }
     },
@@ -79,7 +85,7 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
-      files: ['<%= concat.dist.src %>', 'dev/scss/**/*.scss'],
+      files: ['<%= concat.dist.src %>', 'public/wp-content/themes/csgoeventsgg/dev/scss/**/*.scss'],
       tasks: ['concat', 'uglify', 'sass', 'postcss']
     }
   });
